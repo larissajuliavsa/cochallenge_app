@@ -1,8 +1,9 @@
+import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
 
-import { getRegisterHost } from '../../config/service';
+import { getRegisterHost } from '../../../config/service';
 
-const Home = () => {
+export const Test = () => {
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(false);
 
@@ -33,8 +34,7 @@ const Home = () => {
         })
       )}
       <p>Home</p>
+      <Button variant="contained">Home</Button>
     </div>
   );
 };
-
-export default Home;

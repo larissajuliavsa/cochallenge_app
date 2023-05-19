@@ -4,36 +4,33 @@ export const createRegisterUser = async (host: any) => {
   try {
     const {
       name,
+      lastname,
       birthDate,
-      genre,
-      sexualOrientation,
       email,
       password,
+      userType,
       location,
-      finances,
-      getToKnow,
-      idBooking,
+      genre,
+      sexualOrientation,
       isBooking,
     } = host;
 
-    const { data, error } = await supabase
-      .from('registerHost')
-      .insert([
+    const { data, error } = await supabase.from('registerUser').insert([
+      {
         name,
+        lastname,
         birthDate,
-        genre,
-        sexualOrientation,
         email,
         password,
+        userType,
         location,
-        finances,
-        getToKnow,
-        idBooking,
+        genre,
+        sexualOrientation,
         isBooking,
-      ]);
+      },
+    ]);
 
     if (error || null) throw error;
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -55,29 +52,30 @@ export const createRegisterHost = async (host: any) => {
   try {
     const {
       name,
+      lastname,
       birthDate,
-      genre,
-      sexualOrientation,
-      location,
       email,
       password,
-      rooms,
+      userType,
+      location,
+      genre,
+      sexualOrientation,
     } = host;
-    const { data, error } = await supabase
-      .from('registerHost')
-      .insert([
+    const { data, error } = await supabase.from('registerHost').insert([
+      {
         name,
+        lastname,
         birthDate,
-        genre,
-        sexualOrientation,
-        location,
         email,
         password,
-        rooms,
-      ]);
+        userType,
+        location,
+        genre,
+        sexualOrientation,
+      },
+    ]);
 
     if (error || null) throw error;
-    console.log(data);
   } catch (error) {
     console.log(error);
   }

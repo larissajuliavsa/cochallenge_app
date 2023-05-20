@@ -1,12 +1,15 @@
 import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { validateEmail, validatePassword } from '../../../middlewares';
+import logo from '../../assets/img/logoMain.png';
+import { validateEmail, validatePassword } from '../../middlewares';
 
 export const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submit, setSubmit] = useState({ email: null, password: null });
+  const navigate = useNavigate();
 
   const handleEmail = async (event: any) => {
     setEmail(event.target.value);
@@ -31,27 +34,39 @@ export const SignIn = () => {
     }
     if (submit.email !== null && submit.password !== null) {
       console.log('entrar no app');
+      navigate('/home');
     }
   };
 
   return (
-    <Container
+    <Box
       sx={{
         display: 'flex',
+        flexDirection: 'column',
         height: '100vh',
+        backgroundColor: '#E8E2E2',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
       }}
     >
+      <Box>
+        <img style={{ width: '224px' }} src={logo} alt="logo" />
+      </Box>
       <Box
         sx={{
           width: 500,
-          margin: 'auto',
+          // margin: 'auto',
           padding: '64px 32px',
           borderRadius: '8px',
           boxShadow: 5,
           backgroundColor: '#FFFFFF',
         }}
       >
-        <Typography variant="h4" align="center" sx={{ marginBottom: '64px' }}>
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{ marginBottom: '64px', color: '#212121' }}
+        >
           Login
         </Typography>
         <Box
@@ -74,20 +89,35 @@ export const SignIn = () => {
               label="Senha"
               onChange={handlePassword}
             />
-            <Box sx={{ width: '80%', margin: 'auto' }}>
-              <Stack spacing={{ xs: 4, sm: 8 }} direction="column" useFlexGap>
+            <Box
+              sx={{
+                width: '80%',
+                margin: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px',
+              }}
+            >
+              <Button
+                sx={{ width: '200px', margin: 'auto' }}
+                onClick={handleSubmit}
+                variant="contained"
+              >
+                Entrar
+              </Button>
+              <Link style={{ width: '130px', margin: 'auto' }} to="/register">
                 <Button
-                  sx={{ width: '200px', margin: 'auto' }}
-                  onClick={handleSubmit}
-                  variant="contained"
+                  sx={{ width: '120px', margin: 'auto' }}
+                  variant="outlined"
+                  size="small"
                 >
-                  Cadastrar
+                  Criar conta
                 </Button>
-              </Stack>
+              </Link>
             </Box>
           </Stack>
         </Box>
       </Box>
-    </Container>
+    </Box>
   );
 };

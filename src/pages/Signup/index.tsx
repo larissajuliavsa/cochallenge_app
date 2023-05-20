@@ -16,8 +16,12 @@ import { DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { createRegisterHost, createRegisterUser } from '../../../config/service';
+import logo from '../../assets/img/logoMain.png';
+import { createRegisterHost, createRegisterUser } from '../../config/service';
+
+// import { createRegisterHost, createRegisterUser } from '../../../config/service';
 
 export const SignUp = () => {
   const [name, setName] = useState('');
@@ -38,6 +42,7 @@ export const SignUp = () => {
     sexualOrientation: '',
     isBooking: false,
   });
+  const navigate = useNavigate();
 
   const handleName = (event: any) => {
     setName(event.target.value);
@@ -77,6 +82,8 @@ export const SignUp = () => {
 
     if (email !== '' && password !== '') {
       console.log('entrar no app');
+      navigate('/home');
+
       setSubmit({
         name,
         lastname,
@@ -119,23 +126,33 @@ export const SignUp = () => {
   }, [submit]);
 
   return (
-    <Container
+    <Box
       sx={{
         display: 'flex',
         height: '100vh',
+        backgroundColor: '#E8E2E2',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
       }}
     >
+      <Box>
+        <img style={{ width: '224px' }} src={logo} alt="logo" />
+      </Box>
       <Box
         sx={{
           width: 500,
-          margin: 'auto',
           padding: '64px 32px',
           borderRadius: '8px',
           boxShadow: 5,
           backgroundColor: '#FFFFFF',
         }}
       >
-        <Typography variant="h4" align="center" sx={{ marginBottom: '64px' }}>
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{ marginBottom: '64px', color: '#212121' }}
+        >
           Cadastro
         </Typography>
         <Stack spacing={{ xs: 2, sm: 5 }} direction="row" useFlexGap flexWrap="wrap">
@@ -198,6 +215,6 @@ export const SignUp = () => {
           </Box>
         </Stack>
       </Box>
-    </Container>
+    </Box>
   );
 };

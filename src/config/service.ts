@@ -91,3 +91,21 @@ export const getRegisterHost = async () => {
     console.log(error);
   }
 };
+
+export const createLocation = async (host: any) => {
+  try {
+    const { location, tags, bookings, posts } = host;
+    const { data, error } = await supabase.from('location').insert([
+      {
+        location,
+        tags,
+        bookings,
+        posts,
+      },
+    ]);
+
+    if (error || null) throw error;
+  } catch (error) {
+    console.log(error);
+  }
+};

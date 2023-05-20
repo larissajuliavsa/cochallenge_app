@@ -1,7 +1,6 @@
 ## Installation
 
 Clone the repo and run `yarn install` or `npm install` 
-```
 
 ## Start
 

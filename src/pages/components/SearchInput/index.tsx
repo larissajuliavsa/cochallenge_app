@@ -1,14 +1,3 @@
-// import { Autocomplete, Box, Button, Stack, TextField } from '@mui/material';
-// import { GoogleMap, LoadScript } from '@react-google-maps/api';
-// import { useEffect, useState } from 'react';
-
-// export function Searchbar() {
-//   // const [dataFetch, setDataFetch] = useState();
-
-//   // KEYY AIzaSyAYqlqkWMY1fzoXQE5Rp-ui6uXeipqm9yQ
-//   // ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAYqlqkWMY1fzoXQE5Rp-ui6uXeipqm9yQ&libraries=places');
-// }
-
 import '@reach/combobox/styles.css';
 
 import {

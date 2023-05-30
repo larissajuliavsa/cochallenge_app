@@ -21,8 +21,6 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logoMain.png';
 import { createRegisterHost, createRegisterUser } from '../../config/service';
 
-// import { createRegisterHost, createRegisterUser } from '../../../config/service';
-
 export const SignUp = () => {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');

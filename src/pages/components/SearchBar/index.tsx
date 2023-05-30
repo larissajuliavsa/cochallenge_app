@@ -11,7 +11,6 @@ export const SearchBar = () => {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          //   gap: '16px',
         }}
       >
         <SearchInput />

@@ -7,7 +7,6 @@ export const Error = () => {
     <Box
       sx={{
         display: 'flex',
-        // flexDirection: '',
         gap: '32px',
         backgroundColor: '#E8E2E2',
         height: '100vh',

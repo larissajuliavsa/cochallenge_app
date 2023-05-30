@@ -55,7 +55,6 @@ export const SignIn = () => {
       <Box
         sx={{
           width: 500,
-          // margin: 'auto',
           padding: '64px 32px',
           borderRadius: '8px',
           boxShadow: 5,

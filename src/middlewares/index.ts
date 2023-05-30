@@ -17,7 +17,10 @@ export const validateEmail = async (email: string) => {
       return false;
     }
 
-    if (registerUser.length > 0 || registerHost.length > 0) {
+    if (
+      (registerUser && registerUser.length > 0) ||
+      (registerHost && registerHost.length > 0)
+    ) {
       console.log('O email existe no banco de dados.');
       return true;
     }
@@ -47,7 +50,10 @@ export const validatePassword = async (password: string) => {
       return false;
     }
 
-    if (registerUser.length > 0 || registerHost.length > 0) {
+    if (
+      (registerUser && registerUser.length > 0) ||
+      (registerHost && registerHost.length > 0)
+    ) {
       console.log('O password existe no banco de dados.');
       return true;
     }

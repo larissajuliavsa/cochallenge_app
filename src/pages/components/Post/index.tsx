@@ -45,7 +45,6 @@ export const Post = (props: any) => {
             sx={{
               display: 'flex',
               flexDirection: 'row',
-              //   alignItems: 'center',
               width: '100px',
             }}
           >
